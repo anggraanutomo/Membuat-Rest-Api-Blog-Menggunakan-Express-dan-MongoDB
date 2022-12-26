@@ -1,6 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.send('Hello World!');
-}
+router.get('/blogposts', (req, res) => {
+  res.send('All Blogposts');
+});
+
+router.post('/blogposts', (req, res) => {
+  console.log(req.body);
+  res.send("create a post");
+});
+
+module.exports = router;
