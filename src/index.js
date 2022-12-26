@@ -1,3 +1,4 @@
+require('./models/Blogpost');
 const express = require('express');
 const mongoose = require('mongoose');
 const blogpostRoutes = require('./routes/blogRoutes');

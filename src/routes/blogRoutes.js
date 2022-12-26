@@ -1,4 +1,7 @@
 const express = require('express');
+const mongoose = require('mongoose');
+const Blogpost = mongoose.model('Blogpost');
+
 const router = express.Router();
 
 router.get('/blogposts', (req, res) => {
