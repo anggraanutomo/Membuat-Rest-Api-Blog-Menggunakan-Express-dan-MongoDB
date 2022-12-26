@@ -4,7 +4,7 @@ mengetikkan perintah berikut pada terminal:
 
 ```node src\index.js```
 
-Agar proyek di local machine dapat dijalankan di server, pastikan sudah
+Agar proyek di local machine dapat diakses melalui internet, pastikan sudah
 menginstall ngrok,
 untuk menginstall ngrok dapat mengetikan
 
