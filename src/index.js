@@ -10,7 +10,7 @@ app.use(express.urlencoded({extended: true}));
 
 app.use(blogpostRoutes);
 
-const mongoUri = 'mongodb://localhost:27017/bdd-27';
+const mongoUri = 'mongodb://rootuser:rootpass@127.0.0.1:27017/bdd-17?authSource=admin';
 mongoose.connect(mongoUri);
 
 mongoose.connection.on('connected', () => {
