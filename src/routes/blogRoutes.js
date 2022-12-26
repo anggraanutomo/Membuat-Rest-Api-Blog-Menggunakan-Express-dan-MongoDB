@@ -4,7 +4,7 @@ const Blogpost = mongoose.model('Blogpost');
 
 const router = express.Router();
 
-router.post('/blogposts', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const {title, content} = req.body;
         const blogpost = new Blogpost({title, content});
@@ -15,17 +15,17 @@ router.post('/blogposts', async (req, res) => {
     }
 });
 
-router.get('/blogposts', async (req, res) => {
+router.get('/', async (req, res) => {
     const blogposts = await Blogpost.find();
     res.send(blogposts);
 });
 
-router.get('/blogposts/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
     const blogpost = await Blogpost.findOne({_id: req.params.id});
     res.send(blogpost);
 });
 
-router.put('/blogposts/:id', async (req, res) => {
+router.put('/:id', async (req, res) => {
     try {
         await Blogpost.findByIdAndUpdate({_id: req.params.id}, req.body);
         res.send(await Blogpost.findOne({_id: req.params.id}));
@@ -34,7 +34,7 @@ router.put('/blogposts/:id', async (req, res) => {
     }
 });
 
-router.delete('/blogposts/:id', async (req, res) => {
+router.delete(':id', async (req, res) => {
     try {
         await Blogpost.findByIdAndRemove({_id: req.params.id});
         res.send("delete a post");

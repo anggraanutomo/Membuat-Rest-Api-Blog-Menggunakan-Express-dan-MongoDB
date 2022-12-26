@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-app.use(blogpostRoutes);
+app.use('/blogposts', blogpostRoutes);
 
 const mongoUri = 'mongodb://rootuser:rootpass@127.0.0.1:27017/bdd-17?authSource=admin';
 mongoose.connect(mongoUri);
